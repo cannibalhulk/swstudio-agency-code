@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ThemeToggler from "../Header/ThemeToggler";
 
 const Footer = () => {
   return (
@@ -139,47 +140,6 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          {/* <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
-            <div className="mb-10 w-full">
-              <h4 className="mb-9 text-lg font-semibold text-white">
-                Features
-              </h4>
-              <ul>
-                <li>
-                  <a
-                    href="/#"
-                    className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    How it works
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#"
-                    className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    Privacy policy
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#"
-                    className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="/#"
-                    className="mb-3 inline-block text-base text-gray-7 hover:text-primary"
-                  >
-                    Refund policy
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div> */}
           <div className="w-full px-4 md:w-2/3 lg:w-6/12 xl:w-3/12">
             <div className="mb-10 w-full">
               <h4 className="mb-9 text-lg font-semibold text-white">
@@ -210,6 +170,15 @@ const Footer = () => {
                   >
                     Support
                   </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-3/12 xl:w-2/12">
+            <div className="mb-10 w-full">
+              <ul>
+                <li>
+                    <span className="inline-flex gap-4 items-center"><p className="text-white">Theme: </p><ThemeToggler /></span>
                 </li>
               </ul>
             </div>
