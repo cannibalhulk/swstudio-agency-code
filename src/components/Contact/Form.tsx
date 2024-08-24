@@ -1,41 +1,46 @@
-"use client"
-import { FormEvent, useState } from "react";
+"use client";
+import { FormEvent, useState, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const Form = () => {
-  const [fullname, setFullname] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-  const [phone, setPhone] = useState("")
+  useEffect(() => {
+    emailjs.init({
+      publicKey: "Ue6RxM0ZSo0ZzArzJ",
+      blockHeadless: true,
+    });
+  }, []);
+  // const formRef = useRef<HTMLFormElement>("")
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const data = {
-      fullname: fullname,
-      email: email,
-      phone: phone,
-      message: message,
-    };
-    try {
-      const response = await fetch('/api/email-send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-  
-      if (response.ok) {
-        console.log('Email sent successfully!');
-        setFullname('');
-        setEmail('');
-        setMessage('');
-        setPhone('');
-      } else {
-        console.error('Failed to send email.');
-      }
-    } catch (error) {
-      console.error('Error:', error);
+    if (fullname && email && message && phone) {
+      emailjs
+        .send("service_2et9ha5", "template_pk4it1v", {
+          from_name: fullname,
+          to_name: "Shukur Web Studio",
+          from_phone: phone,
+          from_email: email,
+          message: message,
+        })
+        .then((res) => {
+          console.log("SUCCESS!", res.status);
+          toast.success("Form successfully sent!",{position:"top-center"})
+        })
+        .catch((error: Error) => {
+          console.error("FAILED!", error.message)
+          toast.error("Request failed!")
+          });
+    } else{
+      toast.error("Please fill all the blanks!")
     }
   }
+
   return (
     <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
       <div
@@ -55,10 +60,12 @@ const Form = () => {
               Full Name*
             </label>
             <input
+              required
+              id="fullName"
               type="text"
               name="fullName"
               value={fullname}
-              onChange={(e)=>setFullname(e.target.value)}
+              onChange={(e) => setFullname(e.target.value)}
               placeholder="Adam Gelius"
               className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
             />
@@ -71,10 +78,11 @@ const Form = () => {
               Email*
             </label>
             <input
+              required
               type="email"
               name="email"
               value={email}
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="example@yourmail.com"
               className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
             />
@@ -87,10 +95,11 @@ const Form = () => {
               Phone*
             </label>
             <input
+              required
               type="text"
               name="phone"
               value={phone}
-              onChange={(e)=>setPhone(e.target.value)}
+              onChange={(e) => setPhone(e.target.value)}
               placeholder="+885 1254 5211 552"
               className="w-full border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
             />
@@ -103,9 +112,10 @@ const Form = () => {
               Message*
             </label>
             <textarea
+              required
               name="message"
               value={message}
-              onChange={(e)=>setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
               rows={2}
               placeholder="type your message here"
               className="w-full resize-none border-0 border-b border-[#f1f1f1] bg-transparent pb-3 text-dark placeholder:text-body-color/60 focus:border-primary focus:outline-none dark:border-dark-3 dark:text-white"
