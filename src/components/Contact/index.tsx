@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./Form"
+import { Phone } from "lucide-react";
 
 const Contact = () => {
   return (
@@ -57,6 +58,17 @@ const Contact = () => {
                     </h3>
                     <a href="mailto:hello@shukurwebstudio.com" className="text-base text-body-color dark:text-dark-6">
                       hello@shukurwebstudio.com
+                    </a>
+                  </div>
+                </div>
+                <div className="mb-8 flex w-[330px] max-w-full">
+                  <Phone size={32} className="mr-6  text-primary" />
+                  <div>
+                    <h3 className="mb-[18px] text-lg font-semibold text-dark dark:text-white">
+                      Phone
+                    </h3>
+                    <a href="tel:+994506702756" className="text-base text-body-color dark:text-dark-6">
+                      +994 50 670 27 56
                     </a>
                   </div>
                 </div>
