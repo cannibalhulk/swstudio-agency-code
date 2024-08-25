@@ -34,7 +34,7 @@ const Hero = () => {
                 className="hero-content wow fadeInUp mx-auto max-w-[780px] text-center"
                 data-wow-delay=".2s"
               >
-                <h1 className="mb-6 text-4xl inline-flex flex-col font-outfit font-bold leading-snug text-white sm:text-5xl sm:leading-snug lg:text-7xl lg:leading-[1.2]">
+                <h1 className="mb-6 text-4xl relative inline-flex flex-col font-outfit font-bold leading-snug text-white sm:text-5xl sm:leading-snug lg:text-7xl lg:leading-[1.2]">
                 <span>Your Partner in </span><span> Digital Growth</span>
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
