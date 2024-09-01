@@ -1,6 +1,7 @@
 "use client";
 
 import Footer from "@/components/Footer";
+import Script from "next/script";
 import Header from "@/components/Header";
 import ToasterContext from "@/components/Toast/ToasetContex";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -45,6 +46,13 @@ export default function RootLayout({
               <ScrollToTop />
             </ThemeProvider>
         )}
+
+        {/* @ts-ignore */}
+            <chat-widget location-id="u3C9sgjViW4Iniwt0wSM"></chat-widget>
+            <Script
+              src="https://widgets.leadconnectorhq.com/loader.js" 
+              data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
+            />
       </body>
     </html>
   );
