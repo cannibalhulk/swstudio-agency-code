@@ -1,6 +1,7 @@
 import React from "react";
 import Form from "./Form"
 import { Phone } from "lucide-react";
+import Calendar from "./Cal.com";
 
 const Contact = () => {
   return (
@@ -8,8 +9,8 @@ const Contact = () => {
       <div className="absolute left-0 top-0 -z-[1] h-full w-full dark:bg-dark"></div>
       <div className="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-[#E9F9FF] dark:bg-dark-700 lg:h-[45%] xl:h-1/2"></div>
       <div className="container px-4">
-        <div className="-mx-4 flex flex-wrap items-center">
-          <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
+        <div className="-mx-4 flex lg:grid grid-cols-8 flex-wrap items-center">
+          <div className="w-full col-span-3 px-4 lg:w-7/12 xl:w-8/12">
             <div className="ud-contact-content-wrapper">
               <div className="ud-contact-title mb-12 lg:mb-[150px]">
                 <span className="mb-6 block text-base font-medium text-dark dark:text-white">
@@ -75,7 +76,10 @@ const Contact = () => {
               </div>
             </div>
           </div>
-          <Form/>
+          {/* <Form/> */}
+          <div className="lg:col-span-5 w-full px-4">
+            <Calendar/>
+          </div>
         </div>
       </div>
     </section>
