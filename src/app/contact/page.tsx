@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title:
-    "Contact Page | Shukur Web Studio - Your Digital Web Agency",
+    "Contact | Shukur Web Studio - Your Digital Web Agency",
   description: "Shukur Web Studio: Your trusted digital web agency. We create stunning, functional websites tailored to your business needs. Expert design, development, and digital solutions to boost your online presence.",
 };
 

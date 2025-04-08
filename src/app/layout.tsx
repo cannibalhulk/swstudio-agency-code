@@ -32,7 +32,13 @@ export default function RootLayout({
 
       <body>
         {loading ? (
-          <PreLoader />
+          <ThemeProvider
+            attribute="class"
+            enableSystem={true}
+            defaultTheme="light"
+          >
+            <PreLoader />
+          </ThemeProvider>
         ) : (
             <ThemeProvider
               attribute="class"
