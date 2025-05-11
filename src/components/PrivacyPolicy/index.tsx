@@ -113,7 +113,7 @@ const PrivacyPolicy: React.FC = () => {
             If you have any questions about this Privacy Policy or your interactions with our website, please feel free to contact us at:
             <br />
             <span className="font-medium">Email:</span>
-            <a href="mailto:hello@shukurwebstudio.com" className="text-blue-600 dark:text-blue-400 hover:underline"> hello@shukurwebstudio.com</a>
+            <a href="mailto:privacy@shukurwebstudio.com" className="text-blue-600 dark:text-blue-400 hover:underline"> privacy@shukurwebstudio.com</a>
             <br />
             <span className="font-medium">Phone:</span>
             <a href="tel:+994506202756" className="text-blue-600 dark:text-blue-400 hover:underline"> +994 50 620 27 56</a>
