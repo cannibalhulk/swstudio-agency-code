@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Shukur Web Studio: Your trusted digital web agency. We create stunning, functional websites tailored to your business needs. Expert design, development, and digital solutions to boost your online presence.",
 };
 
-export const AI_Prompts = () => {
+const AIPrompts = () => {
     let content;
     try {
         content = getMarkdownContent('ai-humanizer-prompt');
@@ -36,4 +36,4 @@ export const AI_Prompts = () => {
   )
 }
 
-export default AI_Prompts
+export default AIPrompts
