@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import ToasterContext from "@/components/Toast/ToasetContex";
 import ScrollToTop from "@/components/ScrollToTop";
 import { ThemeProvider } from "next-themes";
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import "../styles/globals.css";
 import "../styles/prism-vsc-dark-plus.css";
 import { useEffect, useState } from "react";
@@ -59,6 +60,7 @@ export default function RootLayout({
               src="https://widgets.leadconnectorhq.com/loader.js" 
               data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" 
             />
+        <GoogleTagManager gtmId="G-KM705SH83Q" />
       </body>
     </html>
   );

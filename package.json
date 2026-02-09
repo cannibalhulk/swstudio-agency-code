@@ -11,6 +11,7 @@
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
     "@emailjs/browser": "^4.4.1",
+    "@next/third-parties": "^16.1.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.30",
